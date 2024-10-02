@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--  <cabinet 
+        xmlns="http://www.univ-grenoble-alpes.fr/l3miage/medical/cabinet"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.univ-grenoble-alpes.fr/l3miage/medical/cabinet ../xsd/cabinet.xsd">
+    
+        <adresse>
+            <numero>2</numero>
+            <rue>avenue des jeux olympiques</rue>
+            <codePostal>38100</codePostal>
+            <ville>Grenonle</ville>
+            <etage>2</etage>
+        </adresse>
+        <patient>
+            <nom>Elaouad</nom>
+            <prenom>Zineb</prenom>
+            <sexe>F</sexe>
+            <numero>4567879809012</numero>
+            <naissance>2023-09-03</naissance>
+            <adresse>
+                <numero>2</numero>
+                <rue>avenue des jeux olympiques</rue>
+                <codePostal>38100</codePostal>
+                <ville>Grenonle</ville>
+                <etage>2</etage>
+            </adresse>
+        </patient>
+
+
+</cabinet> -->
+    <!--<ca:numero></ca:numero>-->
+
+<cabinet nom="Hospital"
+        xmlns="http://www.univ-grenoble-alpes.fr/l3miage/medical/cabinet"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.univ-grenoble-alpes.fr/l3miage/medical/cabinet ../xsd/cabinet.xsd">
+    <adresse>
+        <numero>2</numero>
+        <rue>avenue des jeux olympiques</rue>
+        <codePostal>38100</codePostal>
+        <ville>Grenonle</ville>
+        <etage>2</etage>
+    </adresse>
+    <patients>
+        <patient>
+            <nom>Elaouad</nom>
+            <prenom>Zineb</prenom>
+            <sexe>F</sexe>
+            <numero>4567879809012</numero>
+            <naissance>2023-09-03</naissance>
+            <adresse>
+                <numero>2</numero>
+                <rue>avenue des jeux olympiques</rue>
+                <codePostal>38100</codePostal>
+                <ville>Grenonle</ville>
+                <etage>2</etage>
+            </adresse>
+        </patient>
+    </patients>
+    
+    <infirmiers>
+        <infirmier>
+            <id>001</id>
+            <nom> </nom>
+            <prenom> </prenom>
+            <photo>uhjdh.jpg</photo>
+        </infirmier>
+        <infirmier>
+            <id>002</id>
+            <nom>jfhghkgk</nom>
+            <prenom>hgjkh</prenom>
+            <photo>fgfhgk.jkhk</photo>
+        </infirmier>
+    </infirmiers>
+    
+    <visite>
+        <date>2024-09-26</date>
+        <intervenant>-8098</intervenant>
+        <acte>103</acte>
+    </visite>
+</cabinet>

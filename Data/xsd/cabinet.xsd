@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<schema version="1.0"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:ca="http://www.univ-grenoble-alpes.fr/l3miage/medical/cabinet"
+        targetNamespace="http://www.univ-grenoble-alpes.fr/l3miage/medical/cabinet"
+        elementFormDefault="qualified"
+>
+    <!-- xlmns="http://www.univ-grenoble-alpes.fr/l3miage/medical"> -->
+
+    <!--******************************** Type Cabinet *******************************-->
+    
+    <element name="cabinet" type="ca:Cabinet"/>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--************************** Declaration de type Cabinet **********************-->
+    
+    <complexType name="Cabinet">
+        <sequence>
+            <!-- definition de Adresse -->
+            <element name="adresse" type="ca:Adresse"/>
+            <!--***********************-->
+            
+            <!-- definition de Patient -->
+            <element name="patients" type="ca:Patients"/>
+            <!--***********************-->
+            
+            <!-- definition de Infirmiers -->
+            <element name="infirmiers" type="ca:Infirmiers"/>
+            <!--***********************-->
+            
+            <!-- definition de visite -->
+            <element name="visite" type="ca:Visite"/>
+            <!--***********************-->
+            
+            <!-- definition de acte -->
+            <!--***********************-->
+        </sequence>
+        <attribute name="nom" type="string"/>
+    </complexType>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--************************** Declaration de type Infirmiers **********************-->
+    
+        <complexType name="Infirmiers">
+            <sequence>
+                <element name="infirmier" type="ca:Infirmier" minOccurs="1" maxOccurs="unbounded">
+                    <unique name="idInfirmier">
+                        <selector xpath="ca:infirmier"/>
+                        <field xpath="@id"/>
+                    </unique>
+                </element>
+            </sequence>
+        </complexType>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--************************** Declaration de type Infirmier **********************-->
+    
+        <complexType name="Infirmier">
+            <sequence>
+                <element name="id" type="integer"/>
+                <element name="nom" type="string"/>
+                <element name="prenom" type="string"/>
+                <element name="photo" type="string"/>
+            </sequence>
+            <!--<attribute name="id" type="integer"/>-->
+        </complexType>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--************************** Declaration de type Patient **********************-->
+    
+    <complexType name="Patients">
+        <sequence>
+            <element name="patient" type="ca:Patient" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--************************** Declaration de type Patient **********************-->
+    
+        <complexType name="Patient">
+            <sequence>
+                <element name="nom" type="string"/>
+                <element name="prenom" type="string"/>
+                <element name="sexe" type="string"/>
+                <element name="numero" type="ca:Numero"/>
+                <element name="naissance" type="date"/>
+                <element name="adresse" type="ca:Adresse"/>
+            </sequence>
+        </complexType>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--*********************** Declaration de type Denomination ********************-->
+
+        <simpleType name="Denomination">
+            <restriction base="string">
+                <pattern value="[A-Z][a-z]*"/>
+            </restriction>
+        </simpleType>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--*************************** Declaration de type Sexe ************************-->
+    
+        <simpleType name="Sexe">
+            <restriction base="string">
+                <enumeration value="F"/>
+                <enumeration value="M"/>
+            </restriction>
+        </simpleType>
+    
+    <!--*****************************************************************************-->
+
+    
+    <!--*****************************************************************************-->
+    <!--************************** Declaration de type Numero ***********************-->
+    
+        <simpleType name="Numero">
+            <restriction base="string">
+                <pattern value="[0-9]{13}"/>
+            </restriction>
+        </simpleType>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--************************** Declaration de type Adresse ***********************-->
+    
+        <complexType name="Adresse">
+            <sequence>
+                <element name="numero" type="int"/>
+                <element name="rue" type="string"/>
+                <element name="codePostal" type="ca:CodePostal"/>
+                <element name="ville" type="string"/>
+                <element name="etage" type="int"/>
+            </sequence>
+        </complexType>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--************************** Declaration de type CodePostal ***********************-->
+    
+        <simpleType name="CodePostal">
+            <restriction base="string">
+                <pattern value="[0-9]{5}"/>
+            </restriction>
+        </simpleType>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--************************** Declaration de type Visite ***********************-->
+    
+    <complexType name="Visite">
+        <sequence>
+            <element name="date" type="date"/>
+            <element name="intervenant" type="integer">
+                <keyref name="idIntervenant" refer="infirmier">
+                    <selector xpath="ca:infirmier"/>
+                    <field xpath="@id"/>
+                </keyref>
+            </element>
+            <element name="acte" type="ca:Acte"/>
+        </sequence>
+    </complexType>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--************************** Declaration de type Acte ***********************-->
+    
+    <simpleType name="Acte">
+        <restriction base="string">
+            <enumeration value="101"/>
+            <enumeration value="103"/>
+            <enumeration value="104"/>
+        </restriction>
+    </simpleType>
+    
+    <!--*****************************************************************************-->
+    
+    <!--*****************************************************************************-->
+    <!--************************** Declaration de type Intervenant ***********************-->
+    
+    <!--<simpleType name="Intervenant">
+        <restriction base="integer">
+            
+        </restriction>
+    </simpleType>-->
+    
+    <!--*****************************************************************************-->
+
+</schema>

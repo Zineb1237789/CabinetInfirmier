@@ -1,0 +1,14 @@
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\bin\Debug\net8.0\CabinetInfirmier.exe
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\bin\Debug\net8.0\CabinetInfirmier.deps.json
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\bin\Debug\net8.0\CabinetInfirmier.runtimeconfig.json
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\bin\Debug\net8.0\CabinetInfirmier.dll
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\bin\Debug\net8.0\CabinetInfirmier.pdb
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\obj\Debug\net8.0\CabinetInfirmier.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\obj\Debug\net8.0\CabinetInfirmier.AssemblyInfoInputs.cache
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\obj\Debug\net8.0\CabinetInfirmier.AssemblyInfo.cs
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\obj\Debug\net8.0\CabinetInfirmier.csproj.CoreCompileInputs.cache
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\obj\Debug\net8.0\CabinetInfirmier.dll
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\obj\Debug\net8.0\refint\CabinetInfirmier.dll
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\obj\Debug\net8.0\CabinetInfirmier.pdb
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\obj\Debug\net8.0\CabinetInfirmier.genruntimeconfig.cache
+C:\Users\utilisateur\OneDrive\Documents\L3 MIAGE\XML\CabinetInfirmier\obj\Debug\net8.0\ref\CabinetInfirmier.dll
