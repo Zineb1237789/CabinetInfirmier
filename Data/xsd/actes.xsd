@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:ng="http://www.univ-grenoble-alpes.fr/l3miage/medical"
+        targetNamespace="http://www.univ-grenoble-alpes.fr/l3miage/medical"
+        elementFormDefault="qualified"
+>       <!-- element racine ngap-->
+        <xs:element name="ngap" type="ng:Ngap"/>
+    <!-- Définition du type complexe Ngap contenant types et actes -->
+        <xs:complexType name="Ngap">
+            <xs:sequence>
+                <xs:element name="types" type="ng:Types"/>
+                <xs:element name="acte" type="ng:Actes"/>
+            </xs:sequence>
+        </xs:complexType>
+
+    <!-- Définition des types -->
+        <xs:complexType name="Types">
+            <xs:sequence>
+                <xs:element name="type" maxOccurs="unbounded" type="ng:Type"/>
+            </xs:sequence>
+        </xs:complexType>
+
+    <!-- Définition d'un type avec énumération pour id des types -->
+       <xs:complexType name="Type">
+           <xs:attribute name="id" use="required">
+               <xs:simpleType>
+                   <xs:restriction base="xs:string">
+                       <xs:enumeration value="pi"/> <!-- Prélèvements et injections -->
+                       <xs:enumeration value="pc"/> <!-- Pansements courants -->
+                       <xs:enumeration value="pl"/> <!-- Pansements lourds et complexes -->
+                       <xs:enumeration value="sd"/> <!-- Soins infirmiers à domicile -->
+                   </xs:restriction>
+               </xs:simpleType>
+           </xs:attribute>
+       </xs:complexType>
+
+    <!-- Définition des actes -->
+        <xs:complexType name="Actes">
+             <xs:sequence>
+                 <xs:element name="acte" maxOccurs="unbounded" type="ng:Acte"/>
+             </xs:sequence>
+        </xs:complexType>
+
+
+    <!-- Définition d'un acte avec attributs id, type, clé, et coef -->
+    <xs:complexType name="Acte">
+        <xs:attribute name="id" type="xs:string" use="required"/>
+        <xs:attribute name="type" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="pi"/> <!-- Prélèvements et injections -->
+                    <xs:enumeration value="pc"/> <!-- Pansements courants -->
+                    <xs:enumeration value="pl"/> <!-- Pansements lourds et complexes -->
+                    <xs:enumeration value="sd"/> <!-- Soins infirmiers à domicile -->
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="clé" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="AMI"/>
+                    <xs:enumeration value="AIS"/>
+                    <xs:enumeration value="DI"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="coef" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                    <xs:enumeration value="1"/>
+                    <xs:enumeration value="1.5"/>
+                    <xs:enumeration value="2"/>
+                    <xs:enumeration value="2.25"/>
+                    <xs:enumeration value="2.5"/>
+                    <xs:enumeration value="3"/>
+                    <xs:enumeration value="3.1"/>
+                    <xs:enumeration value="4"/>
+                    <xs:enumeration value="5"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    
+</xs:schema>
