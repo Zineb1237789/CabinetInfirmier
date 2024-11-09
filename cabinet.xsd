@@ -42,7 +42,13 @@
             <!--***********************-->
             
             <!-- definition de Patient -->
-            <element name="patients" type="ca:Patients"/>
+            <element name="patients" type="ca:Patients">
+                <unique name="idPatient">
+                    <selector xpath="ca:patient/ca:visite"/>
+                    <field xpath="@date"/>
+                </unique>
+            </element>
+            
                 
             <!--***********************-->
             
@@ -86,7 +92,7 @@
     <!--*****************************************************************************-->
     
     <!--*****************************************************************************-->
-    <!--************************** Declaration de type Patient **********************-->
+    <!--************************** Declaration de type Patients **********************-->
     
     <complexType name="Patients">
         <sequence>
@@ -103,7 +109,7 @@
         <sequence>
             <element name="nom" type="string"/>
             <element name="prenom" type="string"/>
-            <element name="sexe" type="string"/>
+            <element name="sexe" type="ca:Sexe"/>
             <element name="numero" type="ca:Numero"/>
             <element name="naissance" type="date"/>
             <element name="adresse" type="ca:Adresse"/>
@@ -130,7 +136,9 @@
     <simpleType name="Sexe">
         <restriction base="string">
             <enumeration value="F"/>
+            <enumeration value="Femme"/>
             <enumeration value="M"/>
+            <enumeration value="Homme"/>
         </restriction>
     </simpleType>
     
@@ -151,13 +159,13 @@
     <!--*****************************************************************************-->
     <!--************************** Declaration de type Adresse ***********************-->
     
-    <complexType name="Adresse">
+    <complexType name="Adresse" >
         <sequence>
             <element name="numero" type="int"/>
             <element name="rue" type="string"/>
             <element name="codePostal" type="ca:CodePostal"/>
             <element name="ville" type="string"/>
-            <element name="etage" type="int"/>
+            <element name="etage" type="int" minOccurs="0"/>
         </sequence>
     </complexType>
     
@@ -172,6 +180,11 @@
         </restriction>
     </simpleType>
     
+    <simpleType name="Telephone">
+        <restriction base="string">
+            <pattern value="[0-9]{10}"/>
+        </restriction>
+    </simpleType>
     <!--*****************************************************************************-->
     
     <!--*****************************************************************************-->
@@ -183,9 +196,9 @@
     
     <complexType name="Visite">
         <sequence>
-            <element name="date" type="date"/>
             <element name="intervenant" type="ca:Intervenant"/>
         </sequence>
+        <attribute name="date" type="date"/>
         <attribute name="acte" type="string"/>
     </complexType>
     

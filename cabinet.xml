@@ -14,8 +14,8 @@
     
     <infirmiers>
         <infirmier id="001">
-            <nom> </nom>
-            <prenom> </prenom>
+            <nom>GUEYE</nom>
+            <prenom>Ahmadou </prenom>
             <photo>uhjdh.jpg</photo>
         </infirmier>
         <infirmier id="002">
@@ -38,12 +38,30 @@
                 <ville>Grenonle</ville>
                 <etage>2</etage>
             </adresse>
-            <visite acte="103">
-                <date>2024-09-26</date>
+            <visite acte="103" date="2024-09-26">
+                <!--<date>2024-09-26</date>-->
+                <intervenant id="002"/>
+            </visite>
+
+        </patient>
+        <patient>
+            <nom>Elaouad</nom>
+            <prenom>Zineb</prenom>
+            <sexe>F</sexe>
+            <numero>4567879809012</numero>
+            <naissance>2023-09-03</naissance>
+            <adresse>
+                <numero>2</numero>
+                <rue>avenue des jeux olympiques</rue>
+                <codePostal>38100</codePostal>
+                <ville>Grenonle</ville>
+                <etage>2</etage>
+            </adresse>
+            <visite acte="103" date="2024-10-26">
+                <!--<date>2024-09-26</date>-->
                 <intervenant id="002"/>
             </visite>
         </patient>
-        
         
     </patients>
     
