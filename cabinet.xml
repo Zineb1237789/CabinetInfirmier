@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <cabinet nom="Soins a Grenoble"
          xmlns="http://www.univ-grenoble-alpes.fr/l3miage/medical/cabinet"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://www.univ-grenoble-alpes.fr/l3miage/medical/cabinet ../xsd/cabinet.xsd">
+         xsi:schemaLocation="http://www.univ-grenoble-alpes.fr/l3miage/medical/cabinet ../data/cabinet.xsd">
     <adresse>
         <numero>2</numero>
         <rue>avenue des jeux olympiques</rue>
@@ -29,7 +29,7 @@
             <nom>Elaouad</nom>
             <prenom>Zineb</prenom>
             <sexe>F</sexe>
-            <numero>4567879809012</numero>
+            <numeroSecu>M123456789012345</numeroSecu>
             <naissance>2023-09-03</naissance>
             <adresse>
                 <numero>2</numero>
@@ -38,8 +38,8 @@
                 <ville>Grenonle</ville>
                 <etage>2</etage>
             </adresse>
-            <visite acte="103" date="2024-09-26">
-                <!--<date>2024-09-26</date>-->
+            <visite acte="103" >
+                <date>2024-09-26</date>
                 <intervenant id="002"/>
             </visite>
 
@@ -48,7 +48,7 @@
             <nom>Elaouad</nom>
             <prenom>Zineb</prenom>
             <sexe>F</sexe>
-            <numero>4567879809012</numero>
+            <numeroSecu>M990112345678901</numeroSecu>
             <naissance>2023-09-03</naissance>
             <adresse>
                 <numero>2</numero>
@@ -57,8 +57,8 @@
                 <ville>Grenonle</ville>
                 <etage>2</etage>
             </adresse>
-            <visite acte="103" date="2024-10-26">
-                <!--<date>2024-09-26</date>-->
+            <visite acte="103" >
+                <date>2024-09-26</date>
                 <intervenant id="002"/>
             </visite>
         </patient>
@@ -136,7 +136,7 @@
                 Ablation de fils ou d'agrafes, dix ou moins, y compris le pansement
                 éventuel.
             </acte>
-            <acte id="203" type="pc" clé="AMI" coef="4">
+            <acte id="203" type="pc" clé="AMI" coef="4.1">
                 Ablation de fils ou d'agrafes, plus de dix, y compris le pansement
                 éventuel.
             </acte>
@@ -144,18 +144,18 @@
                 Autre pansement.
             </acte>
             
-            <acte id="300" type="pl" clé="AMI" coef="4">
+            <acte id="300" type="pl" clé="AMI" coef="4.1">
                 Pansement de brûlure étendue ou de plaie chimique ou thermique étendue,
                 sur une surface supérieure à 5% de la surface corporelle.
             </acte>
-            <acte id="301" type="pl" clé="AMI" coef="4">
+            <acte id="301" type="pl" clé="AMI" coef="4.1">
                 Pansement d'ulcère étendu ou de greffe cutanée, sur une surface
                 supérieure à 60 cm².
             </acte>
-            <acte id="302" type="pl" clé="AMI" coef="4">
+            <acte id="302" type="pl" clé="AMI" coef="4.1">
                 Pansement de fistule digestive.
             </acte>
-            <acte id="303" type="pl" clé="AMI" coef="4">
+            <acte id="303" type="pl" clé="AMI" coef="4.1">
                 Pansement chirurgical nécessitant un méchage ou une irrigation.
             </acte>
             
@@ -163,10 +163,10 @@
                 Élaboration de la démarche de soins infirmiers à domicile, planification
                 des soins et rédaction du résumé de la démarche de soins infirmiers.
             </acte>
-            <acte id="402" type="sd" clé="AIS" coef="3.1">
+            <acte id="402" type="sd" clé="AIS" coef="3">
                 Mise en œuvre d'un programme d'aide personnalisée.
             </acte>
-            <acte id="403" type="sd" clé="AIS" coef="4">
+            <acte id="403" type="sd" clé="AIS" coef="4.1">
                 Séance hebdomadaire de surveillance clinique infirmière et de prévention
                 par séance d'une demi-heure.
             </acte>
